@@ -1,0 +1,125 @@
+:root {
+	--md-ref-palette-black-darkest: #000;
+	--md-ref-palette-black-darker: #18191a;
+	--md-ref-palette-black-dark: #212121;
+	--md-ref-palette-black-normal: #2e2e2e;
+	--md-ref-palette-black-light: #363636;
+	--md-ref-palette-black-lighter: #494949;
+	--md-ref-palette-black-lightest: #4f4f4f;
+
+	--md-ref-palette-grey-darkest: #363636;
+	--md-ref-palette-grey-darker: #494949;
+	--md-ref-palette-grey-dark: #4f4f4f;
+	--md-ref-palette-grey-normal: #6c757d;
+	--md-ref-palette-grey-light: #adb5bd;
+	--md-ref-palette-grey-lighter: #ced4da;
+	--md-ref-palette-grey-lightest: #dee2e6;
+
+	--md-ref-palette-white-darkest: #6c757d;
+	--md-ref-palette-white-darker: #adb5bd;
+	--md-ref-palette-white-dark: #ced4da;
+	--md-ref-palette-white-normal: #dee2e6;
+	--md-ref-palette-white-light: #e9ecef;
+	--md-ref-palette-white-lighter: #f8f9fa;
+	--md-ref-palette-white-lightest: #fff;
+
+	--md-ref-palette-primary10: #1b5e20;
+	--md-ref-palette-primary20: #2d431f;
+	--md-ref-palette-primary30: #40642a;
+	--md-ref-palette-primary40: #538836;
+	--md-ref-palette-primary80: #c4deb2;
+	--md-ref-palette-primary90: #e2efd8;
+	--md-ref-palette-primary100: #ffffff;
+
+	--md-ref-palette-secondary10: #23140b;
+	--md-ref-palette-secondary20: #3d1f13;
+	--md-ref-palette-secondary30: #5a2a18;
+	--md-ref-palette-secondary40: #78361c;
+	--md-ref-palette-secondary80: #dcb1a0;
+	--md-ref-palette-secondary90: #eed8cf;
+	--md-ref-palette-secondary100: #ffffff;
+
+	--md-ref-palette-tertiary10: #12141f;
+	--md-ref-palette-tertiary20: #1a2138;
+	--md-ref-palette-tertiary30: #212f53;
+	--md-ref-palette-tertiary40: #273d6f;
+	--md-ref-palette-tertiary80: #acb3d1;
+	--md-ref-palette-tertiary90: #d5d8e8;
+	--md-ref-palette-tertiary100: #ffffff;
+
+	--md-ref-palette-neutral0: #000000;
+	--md-ref-palette-neutral10: #1c201a;
+	--md-ref-palette-neutral20: #323a2c;
+	--md-ref-palette-neutral90: #e3e8e0;
+	--md-ref-palette-neutral95: #f1f3ef;
+	--md-ref-palette-neutral99: #fcfdfc;
+
+	--md-ref-palette-neutral-variant30: #49454f;
+	--md-ref-palette-neutral-variant50: #79747e;
+	--md-ref-palette-neutral-variant60: #938f99;
+	--md-ref-palette-neutral-variant80: #cac4d0;
+	--md-ref-palette-neutral-variant90: #ffffff;
+
+	--md-ref-palette-error10: #410e0b;
+	--md-ref-palette-error20: #601410;
+	--md-ref-palette-error30: #8c1d18;
+	--md-ref-palette-error40: #b3261e;
+	--md-ref-palette-error80: #f2b8b5;
+	--md-ref-palette-error90: #f9dedc;
+	--md-ref-palette-error100: #f9dedc;
+
+	--md-ref-text-white-primary: #fff;
+	--md-ref-text-white-secondary: #fbfbfc;
+
+	--md-ref-text-black-primary: rgba(0, 0, 0, 0.84);
+	--md-ref-text-black-secondary: rgba(0, 0, 0, 0.54);
+
+	--md-sys-color-surface-tint-color: var(--md-sys-color-primary);
+	--md-sys-color-scrim: var(--md-ref-palette-neutral0);
+	--md-sys-color-shadow: var(--md-ref-palette-neutral0);
+
+	--md-sys-shadow-color: var(---md-ref-text-black-secondary);
+}
+
+@mixin apply-surface-color() {
+	background: var(--md-sys-surface-color);
+	color: var(--md-sys-on-surface-color);
+	fill: var(--md-sys-on-surface-color);
+	box-shadow: 0 0.125rem 0.0625rem 0 var(--md-sys-shadow-color);
+}
+
+@mixin system-surface-darkest() {
+	--md-sys-surface-color: var(--md-ref-palette-black-darker);
+	--md-sys-on-surface-color: var(--md-ref-text-white-primary);
+
+	// @media (prefers-color-scheme: dark) {
+	// 	--md-sys-surface-color: var(--md-ref-palette-black-darker);
+	// 	--md-sys-on-surface-color: var(--md-ref-text-white-primary);
+	// }
+
+	@include apply-surface-color();
+}
+
+@mixin system-surface-background() {
+	--md-sys-surface-color: var(--md-ref-palette-grey-lighter);
+	--md-sys-on-surface-color: var(--md-ref-text-black-primary);
+
+	// @media (prefers-color-scheme: dark) {
+	// 	--md-sys-surface-color: var(--md-ref-palette-black-darker);
+	// 	--md-sys-on-surface-color: var(--md-ref-text-white-primary);
+	// }
+
+	@include apply-surface-color();
+}
+
+@mixin system-surface-foreground() {
+	--md-sys-surface-color: var(--md-ref-palette-white-lightest);
+	--md-sys-on-surface-color: var(--md-ref-text-black-primary);
+
+	// @media (prefers-color-scheme: dark) {
+	// 	--md-sys-surface-color: var(--md-ref-palette-black-lighter);
+	// 	--md-sys-on-surface-color: var(--md-ref-text-white-primary);
+	// }
+
+	@include apply-surface-color();
+}
